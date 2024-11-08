@@ -14,6 +14,9 @@ https://qamentalearning.notion.site/DIG-MVP-13833a605d6280f5b5d1e61b3550ffd0
 
 ## （記述途中）ローカル確認方法
 
+## ER図
+[毎日TODO ER図](./ER.md)を参照。
+
 ## 機能
 ### TODOの登録
 各TODOには以下のカテゴリーを設けます。

@@ -13,6 +13,7 @@ https://qamentalearning.notion.site/DIG-MVP-13833a605d6280f5b5d1e61b3550ffd0
 例えば、毎日薬を飲む、毎週特定の曜日にゴミを出す、毎月特定の日に経費精算をする、隔週で行われる会議などが具体的な管理対象となります。
 
 ## （記述途中）ローカル確認方法
+1. Postgresで mainichi_todo というデータベースを作る
 
 ## ER図
 [毎日TODO ER図](./ER.md)を参照。

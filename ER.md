@@ -18,7 +18,7 @@ todo_type {
     string title "TODOのタイトル"
     integer repeat_type_id FK "毎日・毎週・隔週・3週間おき・毎月"
     integer category_type_id FK "その他・投薬・買い物・ゴミ捨て・会議"
-    boolean use_type "時刻も使うか"
+    boolean use_time "時刻も使うか"
     date date_start "TODOの開始日時"
     integer target_weekday "TODOの対象曜日"
     integer target_day "TODOの対象日（毎月のみ）"

@@ -4,7 +4,7 @@ const db = require('../src/db/index');
 const category_typeModel = require('../src/category_type/category_type.model');
 const CATEGORY_TYPE_TABLE = category_typeModel.CATEGORY_TYPE_TABLE;
 
-describe('customer', () => {
+describe('category_type', () => {
     before(async () => {
         await db.migrate
             .forceFreeMigrationsLock()

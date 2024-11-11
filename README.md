@@ -14,6 +14,8 @@ https://qamentalearning.notion.site/DIG-MVP-13833a605d6280f5b5d1e61b3550ffd0
 
 ## （記述途中）ローカル確認方法
 1. Postgresで mainichi_todo というデータベースを作る
+2. migration実行
+3. seed実行
 
 ## ER図
 [毎日TODO ER図](./ER.md)を参照。

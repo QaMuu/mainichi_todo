@@ -2,7 +2,6 @@ const { expect } = require('chai');
 
 const db = require('../src/db/index');
 const todo_typeModel = require('../src/todo_type/todo_type.model');
-const TODO_TYPE_TABLE = todo_typeModel.TODO_TYPE_TABLE;
 
 describe('todo_type', () => {
     before(async () => {
@@ -14,11 +13,39 @@ describe('todo_type', () => {
             .catch(console.error);
     });
 
+    describe('all', () => {
+        it('todo_typeの配列が返却されていること', async () => {
+            const todo_types = await todo_typeModel.all();
+            expect(todo_types).to.be.an.instanceof(Array);
+        });
+
+        it('特定のプロパティを持っていること', async () => {
+            const todo_types = await todo_typeModel.all();
+            todo_types.forEach((todo_type) => {
+                expect(todo_type).to.exist;
+                expect(todo_type).to.have.property('title');
+                expect(todo_type).to.have.property('repeat_type_id');
+                expect(todo_type).to.have.property('category_type_id');
+                expect(todo_type).to.have.property('use_time');
+                expect(todo_type).to.have.property('date_start');
+                expect(todo_type).to.have.property('target_weekday');
+                expect(todo_type).to.have.property('target_day');
+                expect(todo_type).to.have.property('target_time');
+            });
+        });
+
+        it('シードとして投入した5件のレコードを持つこと', async () => {
+            const todo_types = await todo_typeModel.all();
+            expect(todo_types.length).to.be.at.most(5);
+        });
+    });
+
     describe('save', () => {
         it('正常に記録できること', async () => {
             const addDateStart = new Date('2024-11-11T15:00:00.000Z');
             const addTargetTime = new Date('2022-02-22T21:00:00.000Z');
             const addTodoType = {
+                id: 6,
                 title: 'test 4',
                 repeat_type_id: 1,
                 category_type_id: 1,

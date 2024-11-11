@@ -4,6 +4,7 @@
  */
 exports.up = async (knex) => {
     await knex.schema.createTable("todo_type", (table) => {
+        table.increments("id").primary();
         table.string('title',64).notNullable();
         table.integer('repeat_type_id').notNullable();
         table.integer('category_type_id').notNullable();

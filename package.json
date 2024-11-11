@@ -4,7 +4,7 @@
   "description": "毎日TODOの開発リポジトリです。",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --require test/setup.js",
     "db:migrate": "npx knex migrate:latest --knexfile src/db/knexfile.js",
     "db:migrate-make": "npx knex migrate:make --knexfile src/db/knexfile.js",
     "db:seed": "npx knex seed:run --knexfile src/db/knexfile.js",
@@ -21,7 +21,8 @@
     "pg": "^8.13.1"
   },
   "devDependencies": {
-    "chai": "^5.1.2",
+    "chai": "^4.5.0",
+    "chai-as-promised": "^7.1.2",
     "dotenv": "^16.4.5",
     "mocha": "^10.8.2"
   }

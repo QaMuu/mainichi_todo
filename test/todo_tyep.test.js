@@ -68,7 +68,7 @@ describe('todo_type', () => {
                 target_time: updateTargetTime,
             }];
 
-            const resultId = await todo_typeModel.update(1, updateTodoType[0]);
+            const resultId = await todo_typeModel.update(6, updateTodoType[0]);
             const resultTodoType = await todo_typeModel.find(resultId[0].id);
 
             expect(resultTodoType).to.exist;
@@ -94,7 +94,7 @@ describe('todo_type', () => {
 
     describe('delete', () => {
         it('正常に削除できること', async () => {
-            const resultId = await todo_typeModel.delete(1);
+            const resultId = await todo_typeModel.delete(6);
             const resultTodoType = await todo_typeModel.find(resultId[0].id);
 
             expect(resultTodoType).to.be.undefined;

@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {useSetAtom} from "jotai";
+import { Heading, Center } from "@yamada-ui/react"
 
 import {ICategoryType, IRepeatType, ITodo_Type, ITodo_list} from "../globals";
 import {atomAryCategoryTypes, atomAryRepeatTypes, atomAryTodoTypes, atomAryTodoLists} from "../jotai/atomMainichiTodo";
@@ -47,7 +48,10 @@ export function TodoListView() {
 
   return (
     <>
-      <h1>毎日ToDO</h1>
+      <Center>
+        <Heading as="h1" size="2xl" isTruncated>毎日ToDo</Heading>
+      </Center>
+
       {isDrawTodoLists ? (
         <TodoLists />
         ):(

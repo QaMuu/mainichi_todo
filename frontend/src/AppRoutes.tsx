@@ -1,15 +1,18 @@
 import { Routes, Route } from 'react-router-dom';
 import {TodoListView} from "./components/TodoListView.tsx";
 import { Provider } from 'jotai'
+import { UIProvider } from "@yamada-ui/react";
 
 function AppRoutes() {
 
   return (
-    <Provider>
-      <Routes>
-        <Route path="/" element={<TodoListView />} />
-      </Routes>
-    </Provider>
+    <UIProvider>
+      <Provider>
+        <Routes>
+          <Route path="/" element={<TodoListView />} />
+        </Routes>
+      </Provider>
+    </UIProvider>
   )
 }
 

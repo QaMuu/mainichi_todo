@@ -4,6 +4,7 @@ import { UIProvider } from "@yamada-ui/react";
 
 import {TodoListView} from "./components/TodoListView.tsx";
 import {AddNewTodo} from "./components/AddNewTodo.tsx";
+import {ToDoDoneCheck} from "./components/ToDoDoneCheck.tsx";
 
 function AppRoutes() {
 
@@ -13,6 +14,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<TodoListView />} />
           <Route path="/AddNewTodo" element={<AddNewTodo />} />
+          <Route path="/ToDoDoneCheck/:todoListID" element={<ToDoDoneCheck />} />
         </Routes>
       </Provider>
     </UIProvider>

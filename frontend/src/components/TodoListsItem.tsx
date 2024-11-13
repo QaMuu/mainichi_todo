@@ -7,6 +7,7 @@ import {ICategoryType, IRepeatType, ITodo_Type, ITodo_list} from "../globals";
 import {atomAryCategoryTypes, atomAryRepeatTypes, atomAryTodoTypes} from "../jotai/atomMainichiTodo";
 import {dateFormatterToDate} from "../utilitys/DateController.ts";
 import {ImageButtonDone} from "./ImageButtonDone.tsx";
+import {useNavigate} from "react-router-dom";
 
 interface props {
   todo_item:ITodo_list;
@@ -46,6 +47,11 @@ export function TodoListsItem(props:props) {
     setTodoDate(_date);
   }, []);
 
+  const pageNavigator = useNavigate();
+  const handlerClickToDoDone = () => {
+    pageNavigator("/ToDoDoneCheck/" + todoItem.id);
+  }
+
   return (
     <Box bg="white" p="2" rounded="md" marginBottom="2">
       <Center fontSize="xs" fontWeight="bold" color={todoRepeatColor} borderColor={todoRepeatColor} borderWidth="1px" rounded="md" marginBottom="1">
@@ -58,7 +64,8 @@ export function TodoListsItem(props:props) {
         </Box>
         <Spacer />
         <Box>
-          <Center as={"button"} rounded="md" w={"100px"} h={"full"} bg={"blackAlpha.600"} color={"white"} >
+          <Center as={"button"} rounded="md" w={"100px"} h={"full"} bg={"blackAlpha.600"} color={"white"}
+                  onClick={() => {handlerClickToDoDone()}} >
             <ImageButtonDone category_type_id={todoCategoryTypeId} category_type_name={todoCategoryType} />
           </Center>
         </Box>

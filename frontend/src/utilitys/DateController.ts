@@ -9,7 +9,7 @@ export function dateFormatterToDate(dateString: string): string {
   return `${_year}年${_month}月${_day}日 (${aryWeekDay[_weekDay]})`;
 }
 
-export function getStartDate(targetDate:Date, targetRepeatType:number, targetRepeatDay:number = 0) {
+export function getStartDate(targetDate:Date, targetRepeatType:number, targetRepeatDay:number = 0):Date {
   const date = targetDate;
   switch (targetRepeatType) {
     case 1:

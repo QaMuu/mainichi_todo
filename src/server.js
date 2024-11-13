@@ -33,6 +33,18 @@ function setupServer() {
     res.status(200).json(todo_lists);
   });
   
+  app.post("/api/add/todo_type", async (req, res) => {
+    const todo_type = req.body;
+    const resultSave = await todo_typeModel.save(todo_type);
+    res.status(200).json(resultSave);
+  })
+  
+  app.post("/api/add/todo_list", async (req, res) => {
+    const todo_list = req.body;
+    const resultSave = await todo_listModel.save(todo_list);
+    res.status(200).json(resultSave);
+  })
+  
   return app;
 }
 

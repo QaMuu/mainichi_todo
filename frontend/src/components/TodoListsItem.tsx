@@ -28,7 +28,7 @@ export function TodoListsItem(props:props) {
   const aryRepeatTypeColors:string[] = ['red.500', 'orange.300', 'emerald.500', 'sky.500', 'purple.500'];
 
   useEffect(() => {
-    const _todoType:ITodo_Type = aryTodoTypes[todoItem.todo_type_id - 1];
+    const _todoType:ITodo_Type = aryTodoTypes.find((_todo_type:ITodo_Type) => _todo_type.id === todoItem.todo_type_id) as ITodo_Type;
 
     const _title = _todoType.title;
     setTodoTitle(_title);
